@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/presentation/data/services/auth_service.dart';
 import 'package:login/presentation/home/home_page.dart';
 import 'package:login/presentation/register/register_page.dart';
 import '../widgets/custom_text_field.dart';
@@ -16,28 +17,37 @@ class _LoginPageState extends State<LoginPage> {
   final _senhaController = TextEditingController();
   bool _isLoading = false;
 
-  void _login() {
-    if (_formKey.currentState!.validate()) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomePage(
-              nome: _nomeController.text,
-              senha: _senhaController.text,
-            ),
-          ), 
-        );
-      
-      // AQUI entrará a chamada para sua API Java futuramente
-      print("Nome: ${_nomeController.text}, Senha: ${_senhaController.text}");
-      
-      // Simulando um delay de rede
-      Future.delayed(const Duration(seconds: 2), () {
-        if (mounted) setState(() => _isLoading = false);
-      });
+  final AuthService _authService = AuthService();
+
+ void _login() async {
+  if (_formKey.currentState!.validate()) {
+    setState(() => _isLoading = true);
+
+    // CHAMADA REAL PARA O JAVA
+    bool sucesso = await _authService.login(
+      _nomeController.text, 
+      _senhaController.text
+    );
+
+    setState(() => _isLoading = false);
+
+    if (sucesso) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomePage(
+            nome: _nomeController.text,
+            senha: _senhaController.text,
+          ),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Usuário ou senha inválidos!")),
+      );
     }
   }
-
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
