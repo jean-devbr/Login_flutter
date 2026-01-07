@@ -54,3 +54,6 @@ app.*.map.json
 
 # Flutter specific
 .flutter-plugins
+
+# Test folder
+test/
