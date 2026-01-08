@@ -25,13 +25,13 @@ class AuthService {
       final response = await _dio.post(
         "$_baseUrl/usuarios/login",
         data: {
-          "nome": nome,   // Verifique se no seu DTO Java o campo é "nome"
-          "senha": senha, // Verifique se no seu DTO Java o campo é "senha"
+          "nome": nome,  
+          "senha": senha, 
         },
       );
       return response.statusCode == 200;
     } on DioException catch (e) {
-      // Se cair aqui, imprima o status para saber o que o Java respondeu
+      
       print("Status do erro: ${e.response?.statusCode}");
       return false;
     }
