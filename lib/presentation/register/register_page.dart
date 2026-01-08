@@ -20,7 +20,6 @@ class _RegisterPageState extends State<RegisterPage> {
   final AuthService _authService = AuthService();
   bool _isLoading = false;
 
-  // 2. Transformamos a função em ASYNC para poder usar o AWAIT
   void _cadastrar() async {
     if (_formKey.currentState!.validate()) {
       if (_senhaController.text != _confirmarSenhaController.text) {
@@ -32,7 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
       setState(() => _isLoading = true);
 
-      // 3. Criamos o modelo com os dados dos campos
+      
       final novoUsuario = UserModel(
         nome: _nomeController.text,
         senha: _senhaController.text,

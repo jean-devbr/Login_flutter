@@ -5,7 +5,6 @@ class AuthService {
   final String _baseUrl = "http://localhost:8085"; 
   final Dio _dio = Dio();
 
-  // Método para Cadastrar
   Future<bool> cadastrar(UserModel usuario) async {
     try {
       final response = await _dio.post(
@@ -19,7 +18,6 @@ class AuthService {
     }
   }
 
-  // Método para Login
   Future<bool> login(String nome, String senha) async {
     try {
       final response = await _dio.post(

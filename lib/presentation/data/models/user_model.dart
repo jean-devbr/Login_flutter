@@ -9,8 +9,6 @@ class UserModel {
     required this.senha,
   });
 
-  // Este método pega o JSON que vem do Java e transforma em Objeto Dart
-  // Usado no Login ou ao buscar perfil
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       id: json['id'],
@@ -19,8 +17,6 @@ class UserModel {
     );
   }
 
-  // Este método transforma o Objeto Dart em JSON para enviar para o Java
-  // Usado no Cadastro
   Map<String, dynamic> toJson() {
     return {
       'id': id,
