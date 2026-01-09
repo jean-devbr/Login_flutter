@@ -1,7 +1,6 @@
-// lib/presentation/register/register_page.dart
 import 'package:flutter/material.dart';
-import 'package:login/presentation/data/models/user_model.dart';
-import 'package:login/presentation/data/services/auth_service.dart';
+import 'package:login/data/models/user_model.dart';
+import 'package:login/data/services/auth_service.dart';
 import '../widgets/custom_text_field.dart';
 
 class RegisterPage extends StatefulWidget {

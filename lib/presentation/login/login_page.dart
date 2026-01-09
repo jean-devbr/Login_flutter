@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login/presentation/data/services/auth_service.dart';
+import 'package:login/data/services/auth_service.dart';
 import 'package:login/presentation/home/home_page.dart';
 import 'package:login/presentation/register/register_page.dart';
 import '../widgets/custom_text_field.dart';
