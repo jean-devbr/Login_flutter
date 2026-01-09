@@ -18,12 +18,12 @@ Um aplicativo Flutter que fornece recursos de autenticação de usuário, inclui
 lib/
 ├── main.dart
 ├── MyApp.dart
+├── data/
+│   ├── models/
+│   │   └── user_model.dart
+│   └── services/
+│   │   └── auth_service.dart
 ├── presentation/
-│   ├── data/
-│   │   ├── models/
-│   │   │   └── user_model.dart
-│   │   └── services/
-│   │       └── auth_service.dart
 │   ├── home/
 │   │   └── home_page.dart
 │   ├── login/
