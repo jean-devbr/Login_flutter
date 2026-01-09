@@ -74,6 +74,8 @@ A API de backend para este aplicativo está disponível em: [https://github.com/
    flutter run -d chrome
    ```
 
+   Ou pressione F5 no VS Code para executar em modo debug, utilizando a configuração no arquivo .vscode/launch.json.
+
 ## Dependências
 
 - **Dio**: ^5.9.0 - Para fazer requisições HTTP para a API
