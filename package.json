@@ -1,0 +1,7 @@
+{
+  "name": "login_flutter_web",
+  "private": true,
+  "scripts": {
+    "build": "bash vercel/build.sh"
+  }
+}

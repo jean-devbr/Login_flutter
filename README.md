@@ -76,6 +76,17 @@ A API de backend para este aplicativo está disponível em: [https://github.com/
 
    Ou pressione F5 no VS Code para executar em modo debug, utilizando a configuração no arquivo .vscode/launch.json.
 
+## Deploy no Vercel (Flutter Web)
+
+Este repositório inclui scripts para build no Vercel.
+
+1. Crie um novo projeto no Vercel e conecte este repositório.
+2. Em **Build & Output Settings**, deixe o Vercel detectar o projeto.
+3. Se precisar ajustar manualmente, use: Build Command `npm run build` e Output Directory `build/web`.
+4. Para rotas do Flutter (SPA), o arquivo `vercel.json` já configura o rewrite para `index.html`.
+
+Opcional: defina a variável de ambiente `FLUTTER_VERSION` no Vercel para fixar a versão do Flutter (ex.: `stable`).
+
 ## Dependências
 
 - **Dio**: ^5.9.0 - Para fazer requisições HTTP para a API
